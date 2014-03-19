@@ -35,7 +35,7 @@ What is the mean number of times we need to roll a fair die to land a 6?
 This is a simple problem with a few different ways to solve it. The first way is straightforward, involving a sort of insight that is a bit removed from the problem itself. Suppose $m$ is the average number of rolls to get a 6. Clearly, the chance of getting a 6 on the first roll is $1/6$. The chance of getting it on the second roll is $\displaystyle \frac{5}{6} \frac{1}{6}$, and on roll $i$, is $\displaystyle \frac{5}{6}^{i-1} \frac{1}{6}$. Averaging, 
 \[ m = \sum_{i=0} ^{\infty} (i+1) \frac{5}{6}^{i} \frac{1}{6}. \]
 We note that $m$ is the scalar product between an arithmetic and geometric progression, or succinctly: AGP. The problem reduces to summing this infinite AGP. For this, we employ the same trick we use for summing a GP, twice over: the first time to obtain a GP and the second time to obtain the sum of this GP. Let $r = 5/6$ and $a = 1/6$.
-\[  m' := m r = \sum (i+1) r^{i+1} a, \quad \Rightarrow m' - m = a + \sum_{i=1} r^i a = a \left( 1 + \sum_{i=1} r^i \right) = a \sum_{i = 0} r^i . \]
+\[  m' := m r = \sum (i+1) r^{i+1} a, \quad \Rightarrow m - m' = a + \sum_{i=1} r^i a = a \left( 1 + \sum_{i=1} r^i \right) = a \sum_{i = 0} r^i . \]
 Since the final sum is just a GP, we employ the standard trick to get 
 \[ m - m' = (1 - r)m = \frac{a}{1 - r},  \]
 whence
@@ -46,4 +46,19 @@ There is another, more beautiful way to solve the problem. Note that, if we don'
 \[ m = \frac{1}{6} + (m+1)\frac{5}{6} = \frac{5}{6}m + 1, \]
 implying that
 \[ \frac{m-1}{m} = \frac{5}{6} \Rightarrow m = 6.  \]
+
+\subsection{Weakest Link}
+Suppose a player has to win two successive victories for a prize, in a 3-match sequence, played against a total of two players, $A, B$, with the probability of winning against $A$, $p_A$, is less than that of winning against $B$, $p_B$. Should he play $ABA$ or $BAB$ to maximize his chances of winning the prize?
+
+\subsection{On Doors And Prisoners}
+The main attraction of this problem is the potential confusion with another popular problem. 
+\subsubsection{Doors}
+\noindent Consider the popular one first: there are three closed doors, $A, B, C$, one of which has a prize behind it. You don't know which, and you make an initial guess (say $A$). One of the other two doors is opened and you see that there is nothing behind that door. Do you switch your choice to the other closed door or do you stick with $A$?
+
+\subsubsection{Prisoners}
+\noindent Now consider that there are three prisoners, $A, B, C$, two of whom are to be set free. $A$ figures his chances are $2/3$ (which they are). He considers asking the warden, who knows the prisoners that are to be freed, to name a prisoner to be freed that is not himself. But he decides against it by reasoning that, if the warden gives him a name, say $B$ w.l.o.g., his conditional probability of being released is reduced to $1/2$. Is he justified?
+
+\subsection{Unseeded Tournament}
+Consider a tournament with $2^n$ players, to be played hierarchically. What is the chance that two pre-chosen players, $A, B$, meet if all players are equally good?
+
 \end{document}
